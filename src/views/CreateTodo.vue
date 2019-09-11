@@ -2,10 +2,15 @@
   <div class="createTodo">
     Create a new Todo
 
-    <input type="text" v-model="todo.title">
-    <textarea v-model="todo.description"></textarea>
+    <input
+      type="text"
+      v-model="todo.title"
+    >
+    <textarea v-model="todo.description" />
 
-    <button @click="create">Create</button>
+    <button @click="create">
+      Create
+    </button>
   </div>
 </template>
 

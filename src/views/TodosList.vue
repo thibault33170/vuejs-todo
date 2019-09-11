@@ -2,10 +2,15 @@
   <div class="todos">
     <h3>All my awesome todos</h3>
     
-    <button @click="goToCreate">New</button>
+    <button @click="goToCreate">
+      New
+    </button>
 
     <ul>
-      <li v-for="todo in todos" :key="todo.id">
+      <li
+        v-for="todo in todos"
+        :key="todo.id"
+      >
         {{ todo.title }}
         {{ todo.description }}
         {{ todo.category }}
