@@ -26,17 +26,27 @@ export default new Vuex.Store({
   },
   mutations: {
     createTodo(state, todo) {
-      state.todos.push(todo);
+      state.todos.push(todo)
+    },
+    editTodo(state, todo) {
+      const index = state.todos.findIndex(elem => elem.id === todo.id)
+      Vue.set(state.todos, index, todo)
     }
   },
   actions: {
     createTodo(context, todo) {
-      context.commit('createTodo', todo);
+      context.commit('createTodo', todo)
+    },
+    editTodo(context, todo) {
+      context.commit('editTodo', todo)
     }
   },
   getters: {
     todos(state) {
       return state.todos;
+    },
+    getTodoById: (state) => (id) => {
+      return state.todos.find(todo => todo.id === id)
     }
   }
 })

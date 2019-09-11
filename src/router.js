@@ -6,6 +6,7 @@ Vue.use(Router)
 
 import TodosList from '@/views/TodosList'
 import CreateTodo from '@/views/CreateTodo'
+import EditTodo from '@/views/EditTodo'
 
 export default new Router({
   routes: [
@@ -23,6 +24,11 @@ export default new Router({
       path: '/newTodo',
       name: 'newTodo',
       component: CreateTodo
+    },
+    {
+      path: '/todos/:id/edit',
+      name: 'editTodo',
+      component: EditTodo
     }
   ]
 })

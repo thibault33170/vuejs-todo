@@ -16,6 +16,9 @@
         {{ todo.category }}
         {{ todo.status }}
         {{ todo.date }}
+        <button @click="goToEdit(todo.id)">
+          Edit
+        </button>
       </li>
     </ul>
   </div>
@@ -34,6 +37,9 @@ export default {
   methods: {
     goToCreate() {
       this.$router.push({path: 'newTodo'})
+    },
+    goToEdit(id) {
+      this.$router.push({name:'editTodo', params: {id}})
     }
   }
 }
