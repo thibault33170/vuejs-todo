@@ -38,6 +38,15 @@
         </option>
       </select>
     </div>
+
+    <div>
+      <label>Due date</label>
+      <input
+        type="text"
+        v-model="todo.date"
+      >
+    </div>
+
     <button @click="edit">
       Save
     </button>
