@@ -4,6 +4,9 @@ import Home from './views/Home.vue'
 
 Vue.use(Router)
 
+import TodosList from '@/views/TodosList'
+import CreateTodo from '@/views/CreateTodo'
+
 export default new Router({
   routes: [
     {
@@ -12,12 +15,14 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/todos',
+      name: 'todosList',
+      component: TodosList
+    },
+    {
+      path: '/newTodo',
+      name: 'newTodo',
+      component: CreateTodo
     }
   ]
 })
