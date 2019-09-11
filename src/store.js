@@ -19,13 +19,27 @@ export default new Vuex.Store({
         name: 'whatever'
       }
     ],
+    states: [
+      {
+        id: 1,
+        name: 'new'
+      },
+      {
+        id: 2,
+        name: 'wip'
+      },
+      {
+        id: 3,
+        name: 'done'
+      }
+    ],
     todos: [
       {
         id: 1,
         title: 'title 1',
         description: 'description 1',
         category: 'work',
-        status: 'new',
+        state: 'new',
         date: '2019-10-10 16:00:00'
       },
       {
@@ -33,7 +47,7 @@ export default new Vuex.Store({
         title: 'title 2',
         description: 'description 2',
         category: 'home',
-        status: 'new',
+        state: 'new',
         date: '2019-10-10 16:00:00'
       }
     ]
@@ -58,6 +72,9 @@ export default new Vuex.Store({
   getters: {
     getCategories(state) {
       return state.categories
+    },
+    getStates(state) {
+      return state.states
     },
     getTodos(state) {
       return state.todos

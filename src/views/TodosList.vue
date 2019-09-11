@@ -6,10 +6,14 @@
       New
     </button>
 
-    <input
-      type="text"
-      v-model="search"
-    >
+    <div>
+      <label>Search</label>
+      <input
+        type="text"
+        v-model="search"
+      >
+    </div>
+  
     <ul>
       <li
         v-for="todo in filteredTodos"
@@ -18,7 +22,7 @@
         {{ todo.title }}
         {{ todo.description }}
         {{ todo.category }}
-        {{ todo.status }}
+        {{ todo.state }}
         {{ todo.date }}
         <button @click="goToEdit(todo.id)">
           Edit

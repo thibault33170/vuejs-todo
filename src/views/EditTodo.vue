@@ -27,6 +27,17 @@
       </select>
     </div>
 
+<div>
+  <label>state</label>
+  <select v-model="todo.state">
+        <option
+          v-for="state in states"
+          :key="state.id"
+        >
+          {{ state.name }}
+        </option>
+      </select>
+</div>
     <button @click="edit">
       Save
     </button>
@@ -39,6 +50,7 @@ export default {
   data() {
     return {
       categories: [],
+      states: [],
       todo: {},
     }
   },
@@ -52,6 +64,7 @@ export default {
   mounted() {
     this.todo = this.$store.getters.getTodoById(+this.$route.params.id)
     this.categories = this.$store.getters.getCategories
+    this.states = this.$store.getters.getStates
   }
 }
 </script>
