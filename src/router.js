@@ -21,7 +21,7 @@ export default new Router({
       component: TodosList
     },
     {
-      path: '/newTodo',
+      path: '/todos/create',
       name: 'newTodo',
       component: CreateTodo
     },

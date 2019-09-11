@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     goToCreate() {
-      this.$router.push({path: 'newTodo'})
+      this.$router.push({name: 'newTodo'})
     },
     goToEdit(id) {
       this.$router.push({name:'editTodo', params: {id}})
