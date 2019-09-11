@@ -1,10 +1,6 @@
 <template>
   <div class="todos">
     <h3>All my awesome todos</h3>
-    
-    <button @click="goToCreate">
-      New
-    </button>
 
     <div>
       <label>Search</label>
@@ -73,9 +69,6 @@ export default {
     this.states = this.$store.getters.getStates
   },
   methods: {
-    goToCreate() {
-      this.$router.push({name: 'newTodo'})
-    },
     goToEdit(id) {
       this.$router.push({name:'editTodo', params: {id}})
     }
