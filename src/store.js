@@ -5,6 +5,20 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    categories: [
+      {
+        id: 1,
+        name: 'work'
+      },
+      {
+        id: 2,
+        name: 'home'
+      },
+      {
+        id: 3,
+        name: 'whatever'
+      }
+    ],
     todos: [
       {
         id: 1,
@@ -42,8 +56,11 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    todos(state) {
-      return state.todos;
+    getCategories(state) {
+      return state.categories
+    },
+    getTodos(state) {
+      return state.todos
     },
     getTodoById: (state) => (id) => {
       return state.todos.find(todo => todo.id === id)

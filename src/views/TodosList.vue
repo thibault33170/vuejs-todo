@@ -6,7 +6,10 @@
       New
     </button>
 
-<input type="text" v-model="search">
+    <input
+      type="text"
+      v-model="search"
+    >
     <ul>
       <li
         v-for="todo in filteredTodos"
@@ -34,7 +37,7 @@ export default {
     }
   },
   mounted() {
-    this.todos = this.$store.getters.todos
+    this.todos = this.$store.getters.getTodos
   },
   methods: {
     goToCreate() {
@@ -48,14 +51,14 @@ export default {
     filteredTodos() {
       return this.todos.filter((todo) => {
         if (this.search === '') {
-          return true;
+          return true
         }
 
         if(todo.title.toLowerCase().includes(this.search.toLowerCase()) || todo.description.toLowerCase().includes(this.search.toLowerCase())) {
-          return true;
+          return true
         }
 
-        return false;
+        return false
       })
     }
   }

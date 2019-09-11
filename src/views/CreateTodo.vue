@@ -1,16 +1,41 @@
 <template>
   <div class="createTodo">
-    Create a new Todo
+    <h3> New Todo </h3>
 
-    <input
-      type="text"
-      v-model="todo.title"
-    >
-    <textarea v-model="todo.description" />
+    <form>
+      <div>
+        <label> Title </label>
+        <input
+          type="text"
+          v-model="todo.title"
+        >
+      </div>
+    
+      <div>
+        <label> Description </label>
+        <textarea v-model="todo.description" />
+      </div>
 
-    <button @click="create">
-      Create
-    </button>
+      <div>
+        <label> Category </label>
+        <select v-model="todo.category">
+          <option disabled>
+            Choose
+          </option>
+          <option
+            :value="category.name"
+            v-for="category in categories"
+            :key="category.id"
+          >
+            {{ category.name }}
+          </option>
+        </select>
+      </div>
+
+      <button @click="create">
+        Create
+      </button>
+    </form>
   </div>
 </template>
 
@@ -19,15 +44,19 @@ export default {
   name: 'CreateTodo',
   data() {
     return {
+      categories: [],
       todo: {
         id: this.generateUid(),
         title: '',
         description: '',
         category: '',
-        status: '',
+        status: 'new',
         date: ''
       },
     }
+  },
+  mounted() {
+    this.categories = this.$store.getters.getCategories;
   },
   methods: {
     create() {
