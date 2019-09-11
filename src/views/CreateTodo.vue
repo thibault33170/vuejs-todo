@@ -35,7 +35,7 @@
       <div>
         <label>Due date</label>
         <input
-          type="text"
+          type="date"
           v-model="todo.date"
         >
       </div>

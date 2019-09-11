@@ -40,7 +40,7 @@ export default new Vuex.Store({
         description: 'description 1',
         category: 'work',
         state: 'new',
-        date: '2019-10-10 16:00:00'
+        date: '2019-10-10'
       },
       {
         id: 2,
@@ -48,7 +48,7 @@ export default new Vuex.Store({
         description: 'description 2',
         category: 'home',
         state: 'new',
-        date: '2019-10-10 16:00:00'
+        date: '2019-10-10'
       }
     ]
   },
