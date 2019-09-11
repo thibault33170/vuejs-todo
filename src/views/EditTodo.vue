@@ -27,9 +27,9 @@
       </select>
     </div>
 
-<div>
-  <label>state</label>
-  <select v-model="todo.state">
+    <div>
+      <label>state</label>
+      <select v-model="todo.state">
         <option
           v-for="state in states"
           :key="state.id"
@@ -37,7 +37,7 @@
           {{ state.name }}
         </option>
       </select>
-</div>
+    </div>
     <button @click="edit">
       Save
     </button>
