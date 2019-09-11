@@ -6,9 +6,10 @@
       New
     </button>
 
+<input type="text" v-model="search">
     <ul>
       <li
-        v-for="todo in todos"
+        v-for="todo in filteredTodos"
         :key="todo.id"
       >
         {{ todo.title }}
@@ -28,7 +29,8 @@
 export default {
   data() {
     return {
-      todos: []
+      todos: [],
+      search:''
     }
   },
   mounted() {
@@ -40,6 +42,21 @@ export default {
     },
     goToEdit(id) {
       this.$router.push({name:'editTodo', params: {id}})
+    }
+  },
+  computed: {
+    filteredTodos() {
+      return this.todos.filter((todo) => {
+        if (this.search === '') {
+          return true;
+        }
+
+        if(todo.title.toLowerCase().includes(this.search.toLowerCase()) || todo.description.toLowerCase().includes(this.search.toLowerCase())) {
+          return true;
+        }
+
+        return false;
+      })
     }
   }
 }
