@@ -2,54 +2,93 @@
   <div class="editTodo">
     <h3>Edit</h3>
 
-    <div>
-      <label>Title</label>
-      <input
-        type="text"
-        v-model="todo.title"
+    <b-form>
+      <b-form-group
+        id="input-group-2"
+        label="Title"
+        label-for="input-2"
       >
-    </div>
+        <b-form-input
+          id="input-2"
+          v-model="todo.title"
+          required
+          placeholder="Enter title"
+        />
+      </b-form-group>
 
-    <div>
-      <label>Description</label>
-      <textarea v-model="todo.description" />
-    </div>
-
-    <div>
-      <label>Category</label>
-      <select v-model="todo.category">
-        <option
-          v-for="category in categories"
-          :key="category.id"
-        >
-          {{ category.name }}
-        </option>
-      </select>
-    </div>
-
-    <div>
-      <label>state</label>
-      <select v-model="todo.state">
-        <option
-          v-for="state in states"
-          :key="state.id"
-        >
-          {{ state.name }}
-        </option>
-      </select>
-    </div>
-
-    <div>
-      <label>Due date</label>
-      <input
-        type="date"
-        v-model="todo.date"
+      <b-form-group
+        id="input-group-2"
+        label="Description"
+        label-for="input-2"
       >
-    </div>
-
-    <button @click="edit">
-      Save
-    </button>
+        <b-form-textarea
+          id="textarea"
+          v-model="todo.description"
+          placeholder="Enter description..."
+          rows="3"
+          max-rows="6"
+          required
+        />
+      </b-form-group>
+      <b-form-group
+        id="input-group-3"
+        label="Categories"
+        label-for="input-3"
+      >
+        <b-form-select v-model="todo.category" required>
+          <option disabled>
+            Choose
+          </option>
+          <option
+            :value="category.name"
+            v-for="category in categories"
+            :key="category.id"
+          >
+            {{ category.name }}
+          </option>
+        </b-form-select>
+      </b-form-group>
+      <b-form-group
+        id="input-group-4"
+        label="État"
+        label-for="input-4"
+      >
+        <b-form-select v-model="todo.state" required>
+          <option disabled>
+            Choose
+          </option>
+          <option
+            :value="state.name"
+            v-for="state in states"
+            :key="state.id"
+          >
+            {{ state.name }}
+          </option>
+        </b-form-select>
+      </b-form-group>
+      <b-form-group
+        id="input-group-5"
+        label="Due date"
+        label-for="input-5"
+      >
+        <b-form-input
+          id="input-5"
+          v-model="todo.date"
+          placeholder="due date"
+          type="date"
+          required
+        /> 
+      </b-form-group>
+      <b-form-group>
+        <b-button
+          type="button"
+          variant="primary"
+          @click="edit"
+        >
+          Save
+        </b-button>
+      </b-form-group>
+    </b-form> 
   </div>
 </template>
 
