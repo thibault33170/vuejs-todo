@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     Welcome to my awesome VueJS Todolist !  
-    <router-link to="/todos">
+    <router-link :to="{name: 'todosList'}">
       Click here to check that :)
     </router-link>
   </div>
