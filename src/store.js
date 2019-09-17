@@ -36,17 +36,17 @@ export default new Vuex.Store({
     todos: [
       {
         id: 1,
-        title: 'title 1',
-        description: 'description 1',
-        category: 'work',
+        title: 'Faire a manger',
+        description: "Manger c'est quand même super important",
+        category: 'home',
         state: 'new',
         date: '2019-10-10'
       },
       {
         id: 2,
-        title: 'title 2',
-        description: 'description 2',
-        category: 'home',
+        title: 'Faire le CV',
+        description: "Avec un CV à jour c'est toujours",
+        category: 'work',
         state: 'new',
         date: '2019-10-10'
       }
