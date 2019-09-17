@@ -48,7 +48,7 @@ export default {
   methods: {
     goToCreate() {
       this.$router.push({name: 'newTodo'})
-    },
+    }
   }
 }
 </script>
