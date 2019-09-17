@@ -35,7 +35,10 @@
         label="Categories"
         label-for="input-3"
       >
-        <b-form-select v-model="todo.category" required>
+        <b-form-select
+          v-model="todo.category"
+          required
+        >
           <option disabled>
             Choose
           </option>
@@ -53,7 +56,10 @@
         label="État"
         label-for="input-4"
       >
-        <b-form-select v-model="todo.state" required>
+        <b-form-select
+          v-model="todo.state"
+          required
+        >
           <option disabled>
             Choose
           </option>
